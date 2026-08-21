@@ -1,6 +1,7 @@
-#include "Bureaucrat.hpp"
-
 #include <iostream>
+
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name_("Undefined"), grade_(150) {
 	std::cout << "Undefined Pigeon created" << std::endl;

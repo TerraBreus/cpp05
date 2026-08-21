@@ -3,6 +3,8 @@
 #include <string>
 #include <exception>
 
+class Form;
+
 class Bureaucrat {
 	private:
 		int grade_;
