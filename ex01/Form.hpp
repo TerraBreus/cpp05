@@ -18,10 +18,10 @@ class Form {
 		Form& operator=(const Form& other);
 		~Form(void);
 
-		const std::string getName();
-		bool getSignatureState();
-		int getGradeForSignature();
-		int getGradeForExection();
+		const std::string getName() const;
+		bool getSignatureState() const;
+		int getGradeForSignature() const;
+		int getGradeForExecution() const;
 
 		void beSigned(Bureaucrat& b);
 

@@ -38,22 +38,22 @@ Form::~Form(void)
 // 	    G E T T E R S
 // - - - - - - - - - - - -
 
-const std::string Form::getName()
+const std::string Form::getName() const
 {
 	return (this->name_);
 }
 
-bool Form::getSignatureState()
+bool Form::getSignatureState() const
 {
 	return (this->signed_);
 }
 
-int Form::getGradeForSignature()
+int Form::getGradeForSignature() const
 {
 	return (this->grade_for_signature_);
 }
 
-int Form::getGradeForExection()
+int Form::getGradeForExecution() const
 {
 	return (this->grade_for_execution_);
 }
