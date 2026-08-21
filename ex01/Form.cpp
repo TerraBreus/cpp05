@@ -62,7 +62,7 @@ int Form::getGradeForExecution() const
 // M E M B E R F U N C T I O N S
 // - - - - - - - - - - - - - - -
 
-void Form::beSigned(Bureaucrat& b)
+void Form::beSigned(const Bureaucrat& b)
 {
 	if (b.getGrade() > this->grade_for_signature_)
 		throw (Form::GradeTooLowException());
