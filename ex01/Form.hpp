@@ -12,4 +12,15 @@ class Form {
 		int getGradeForExection();
 
 		void beSigned(Bureaucrat& b);
+
+		class GradeTooLowException : public std::exception {
+			virtual const char* what() const throw() {
+				return "Grade too low for form!";
+			}
+		};
+		class GradeTooHighException : public std::exception {
+			virtual const char* what() const throw() {
+				return "Grade too high!";
+			}
+		};
 };
