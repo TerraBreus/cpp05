@@ -23,7 +23,7 @@ class Form {
 		int getGradeForSignature() const;
 		int getGradeForExecution() const;
 
-		void beSigned(Bureaucrat& b);
+		void beSigned(const Bureaucrat& b);
 
 		class GradeTooLowException : public std::exception {
 			virtual const char* what() const throw() {
