@@ -1,5 +1,10 @@
 class Form {
 	private:
+		const std::string name_;
+		bool signed_;
+		const int grade_for_signature_;
+		const int grade_for_execution_;
+		
 	public:
 		Form(std::string name, int sign_grade, int sign_exec);
 		Form(const Form& other);
