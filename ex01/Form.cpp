@@ -29,3 +29,27 @@ Form::~Form(void)
 	std::cout << "Form destroyed." << std::endl;
 }
 
+// - - - - - - - - - - - - 
+// 	    G E T T E R S
+// - - - - - - - - - - - -
+
+const std::string Form::getName()
+{
+	return (this->name_);
+}
+
+bool Form::getSignatureState()
+{
+	return (this->signed_);
+}
+
+int Form::getGradeForSignature()
+{
+	return (this->grade_for_signature_);
+}
+
+int Form::getGradeForExection()
+{
+	return (this->grade_for_execution_);
+}
+

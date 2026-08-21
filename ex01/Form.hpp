@@ -6,4 +6,8 @@ class Form {
 		Form& operator=(const Form& other);
 		~Form(void);
 
+		const std::string getName();
+		bool getSignatureState();
+		int getGradeForSignature();
+		int getGradeForExection();
 };
