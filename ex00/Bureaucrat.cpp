@@ -27,11 +27,11 @@ Bureaucrat::~Bureaucrat(void) {
 	std::cout << "Pigeon named " << _name << " destroyed" << std::endl;
 }
 
-const std::string Bureaucrat::getName() {
+const std::string Bureaucrat::getName() const {
 	return (this->_name);
 }
 
-int Bureaucrat::getGrade() {
+int Bureaucrat::getGrade() const {
 	return (this->_grade);
 }
 
