@@ -6,19 +6,23 @@
 
 int main(void)
 {
-	Bureaucrat Brat("Chat");
-	Bureaucrat Bred(Brat);
-	Form someform("28a", 140, 140);
-	
-	std::cout << Bred << std::endl;
-	try {
-		for (int i = 0; i < 148; i++)
-			Brat.incrementGrade();
-		someform.beSigned(Brat);
+	Bureaucrat pigeon("Johny");
+	Form pieceOfPaper("Graduation Certificate", 40, 12);
+
+	std::cout << pigeon << std::endl;
+	std::cout << pieceOfPaper << std::endl;
+
+	try
+	{
+		pigeon.incrementGrade(120);
 	}
-	catch (std::exception & e)
+	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
+	pigeon.signForm(pieceOfPaper);
+
+	Bureaucrat pig("Jimbo", 41);
+	pig.signForm(pieceOfPaper);
 }
