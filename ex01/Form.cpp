@@ -53,3 +53,13 @@ int Form::getGradeForExection()
 	return (this->grade_for_execution_);
 }
 
+// - - - - - - - - - - - - - - - 
+// M E M B E R F U N C T I O N S
+// - - - - - - - - - - - - - - -
+
+void Form::beSigned(Bureaucrat& b)
+{
+	if (b.getGrade() > this->grade_for_signature_)
+		throw (Form::GradeTooLowException());
+	this->signed_ = true;
+}

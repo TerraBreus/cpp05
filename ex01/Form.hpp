@@ -10,4 +10,6 @@ class Form {
 		bool getSignatureState();
 		int getGradeForSignature();
 		int getGradeForExection();
+
+		void beSigned(Bureaucrat& b);
 };
