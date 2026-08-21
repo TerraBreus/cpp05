@@ -68,3 +68,16 @@ void Form::beSigned(Bureaucrat& b)
 		throw (Form::GradeTooLowException());
 	this->signed_ = true;
 }
+
+// - - - - - - - - - - - - 
+//  Others.
+// - - - - - - - - - - - -
+
+std::ostream& operator<<(std::ostream& o, Form& f)
+{
+	std::cout << "Form with name: " << f.getName() << std::endl;
+	std::cout << "Signature State: " << f.getSignatureState() << std::endl;
+	std::cout << "Grade needed for Execution " << f.getGradeForExecution() << std::endl;
+	std::cout << "Grade needed for Signature " << f.getGradeForSignature();
+	return (o);
+}
