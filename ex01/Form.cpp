@@ -1,3 +1,8 @@
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include <iostream>
+#include <string>
+
 // - - - - - - - - - - - - 
 //      C A N O N 
 // - - - - - - - - - - - - 

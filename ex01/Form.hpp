@@ -1,3 +1,10 @@
+#pragma once
+
+#include <string>
+#include <exception>
+
+#include "Bureaucrat.hpp"
+
 class Form {
 	private:
 		const std::string name_;
