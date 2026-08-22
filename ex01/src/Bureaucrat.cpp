@@ -1,15 +1,19 @@
 #include <iostream>
 
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "../inc/Form.hpp"
+#include "../inc/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name_("Undefined"), grade_(150) {
+	#ifdef DEBUG
 	std::cout << "Undefined Pigeon created" << std::endl;
+	#endif
 }
 
 Bureaucrat::Bureaucrat(std::string name) : name_(name) , grade_(150) {
 
+	#ifdef DEBUG
 	std::cout << "Pigeon named " << name_ << " created." << std::endl;
+	#endif
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name_(name) {
@@ -22,7 +26,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name_(name) {
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) 
 	: name_(other.name_), grade_(other.grade_) {
+	#ifdef DEBUG
 	std::cout << "Pigeon cloning device activated... Copying " << other.name_ << std::endl;
+	#endif
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
@@ -33,7 +39,9 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 }
 
 Bureaucrat::~Bureaucrat(void) {
+	#ifdef DEBUG
 	std::cout << "Pigeon named " << name_ << " destroyed" << std::endl;
+	#endif
 }
 
 const std::string Bureaucrat::getName() const {

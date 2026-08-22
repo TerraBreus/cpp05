@@ -1,5 +1,5 @@
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "../inc/Form.hpp"
+#include "../inc/Bureaucrat.hpp"
 
 #include <iostream>
 #include <exception>
