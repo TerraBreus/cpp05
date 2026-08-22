@@ -10,7 +10,9 @@
 Form::Form(std::string name, int sign_grade, int exec_grade) :
 	name_(name), signed_(false), grade_for_signature_(sign_grade), grade_for_execution_(exec_grade)
 {
+	#ifdef DEBUG
 	std::cout << "Form created." << std::endl;
+	#endif
 }
 
 Form::Form(const Form& other) :
@@ -18,7 +20,9 @@ Form::Form(const Form& other) :
 	grade_for_signature_(other.grade_for_signature_),
 	grade_for_execution_(other.grade_for_execution_)
 {
+	#ifdef DEBUG
 	std::cout << "Form duplicated." << std::endl;
+	#endif
 	*this = other;
 }
 
@@ -31,7 +35,9 @@ Form& Form::operator=(const Form& other) {
 
 Form::~Form(void)
 {
+	#ifdef DEBUG
 	std::cout << "Form destroyed." << std::endl;
+	#endif
 }
 
 // - - - - - - - - - - - - 
