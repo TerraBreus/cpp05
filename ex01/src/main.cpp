@@ -25,4 +25,12 @@ int main(void)
 
 	Bureaucrat pig("Jimbo", 41);
 	pig.signForm(pieceOfPaper);
+	try
+	{
+		Form tooHighForm("lorem ipsum", 151, -2);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
