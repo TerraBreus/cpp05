@@ -10,6 +10,10 @@
 Form::Form(std::string name, int sign_grade, int exec_grade) :
 	name_(name), signed_(false), grade_for_signature_(sign_grade), grade_for_execution_(exec_grade)
 {
+	if (grade_for_signature_ > 150 || grade_for_execution_ > 150)
+		throw (Form::GradeTooLowException());
+	if (grade_for_signature_ < 1 || grade_for_execution_ < 1)
+		throw (Form::GradeTooHighException());
 	#ifdef DEBUG
 	std::cout << "Form created." << std::endl;
 	#endif
@@ -20,6 +24,10 @@ Form::Form(const Form& other) :
 	grade_for_signature_(other.grade_for_signature_),
 	grade_for_execution_(other.grade_for_execution_)
 {
+	if (grade_for_signature_ > 150 || grade_for_execution_ > 150)
+		throw (Form::GradeTooLowException());
+	if (grade_for_signature_ < 1 || grade_for_execution_ < 1)
+		throw (Form::GradeTooHighException());
 	#ifdef DEBUG
 	std::cout << "Form duplicated." << std::endl;
 	#endif
