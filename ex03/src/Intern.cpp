@@ -31,7 +31,7 @@ AForm* Intern::makeForm(std::string form, std::string target) const {
 		"presidential pardon",
 		"robotomy request"};
 	int i = 0;
-	while (i < 4)
+	while (i < 3)
 	{
 		if (form == possibleForms[i])
 			break;
@@ -56,7 +56,7 @@ AForm* Intern::makeForm(std::string form, std::string target) const {
 		}
 		default :
 		{
-			std::cout << "Form: " + target + " doesn't exist." << std::endl;
+			std::cout << "Form: " + form + " doesn't exist." << std::endl;
 		}
 	}
 	return (nullptr);
