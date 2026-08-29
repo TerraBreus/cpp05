@@ -17,7 +17,7 @@ class AForm {
 		AForm(std::string name, int sign_grade, int sign_exec);
 		AForm(const AForm& other);
 		AForm& operator=(const AForm& other);
-		~AForm(void);
+		virtual ~AForm(void);
 
 		// GETTERS
 		const std::string getName() const;
@@ -36,19 +36,22 @@ class AForm {
 
 		// EXCEPTIONS
 		class GradeTooLowException : public std::exception {
-			virtual const char* what() const throw() {
-				return "Grade too low for form!";
-			}
+			public:
+				virtual const char* what() const throw() {
+					return "Grade too low for form!";
+				}
 		};
 		class GradeTooHighException : public std::exception {
-			virtual const char* what() const throw() {
-				return "Grade too high!";
-			}
+			public:
+				virtual const char* what() const throw() {
+					return "Grade too high!";
+				}
 		};
 		class FormNotSignedException : public std::exception {
-			virtual const char* what() const throw() {
-				return "Form not signed!";
-			}
+			public:
+				virtual const char* what() const throw() {
+					return "Form not signed!";
+				}
 		};
 };
 
