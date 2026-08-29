@@ -15,8 +15,9 @@ class ShrubberyCreationForm : public AForm {
 		void executeAction() const;
 
 		class FileNotOpenException : public std::exception {
-			virtual const char* what() const throw() {
-				return "File did not open/create correctly!";
-			}
+			public:
+				virtual const char* what() const throw() {
+					return "File did not open/create correctly!";
+				}
 		};
 };
