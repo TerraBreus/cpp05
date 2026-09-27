@@ -21,12 +21,37 @@ int main(void)
 	section("Simple Construction and Insertion Operator");
 	try
 	{
-		Bureaucrat a("Alice");
+		Bureaucrat a("Alice", 12);
 		std::cout << a << std::endl;
 	}
 	catch (std::exception& e)
 	{
 		std::cout << "Unexpected: " << e.what() << std::endl;
+	}
+
+	section("Construction with too High Grade");
+	try
+	{
+		Bureaucrat b("Bob", -1);
+		std::cout << b << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << RED << "Caught: ";
+		std::cout << e.what() << RESET << std::endl;
+	}
+
+	section("Construction with too Low Grade");
+	try
+	{
+		Bureaucrat c("Chris", 152);
+		std::cout << c << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << RED << "Caught: ";
+		std::cout << e.what();
+		std::cout << RESET << std::endl;
 	}
 
 	section("Copy constructor / assignment");
