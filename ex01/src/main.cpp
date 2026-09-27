@@ -4,11 +4,15 @@
 #include <iostream>
 #include <exception>
 
+#define GREEN "\033[42m"
+#define RED "\033[41m"
+#define RESET "\033[0m"
+
 static void section(const std::string& title)
 {
-	std::cout << std::endl
+	std::cout << std::endl << GREEN
 		<< "==================== " << title << " ===================="
-		<< std::endl;
+		<< RESET << std::endl;
 }
 
 static void makeBureaucrat(const std::string& name, int grade)
@@ -18,15 +22,10 @@ static void makeBureaucrat(const std::string& name, int grade)
 		Bureaucrat b(name, grade);
 		std::cout << "Created: " << b << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException& e)
+	catch (std::exception& e)
 	{
-		std::cout << "Bureaucrat(" << name << ", " << grade
-			<< ") -> GradeTooHighException: " << e.what() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << "Bureaucrat(" << name << ", " << grade
-			<< ") -> GradeTooLowException: " << e.what() << std::endl;
+		std::cout << RED << "Caught:" << RESET;
+		std::cout << e.what() << std::endl;
 	}
 }
 
@@ -37,15 +36,10 @@ static void makeForm(const std::string& name, int sign, int exec)
 		Form f(name, sign, exec);
 		std::cout << "Created:" << std::endl << f << std::endl;
 	}
-	catch (Form::GradeTooHighException& e)
+	catch (std::exception& e)
 	{
-		std::cout << "Form(" << name << ", " << sign << ", " << exec
-			<< ") -> GradeTooHighException: " << e.what() << std::endl;
-	}
-	catch (Form::GradeTooLowException& e)
-	{
-		std::cout << "Form(" << name << ", " << sign << ", " << exec
-			<< ") -> GradeTooLowException: " << e.what() << std::endl;
+		std::cout << RED << "Caught:" << RESET;
+		std::cout << e.what() << std::endl;
 	}
 }
 
