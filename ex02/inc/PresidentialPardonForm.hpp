@@ -1,3 +1,4 @@
+#pragma once
 #include "../inc/Bureaucrat.hpp"
 #include "../inc/AForm.hpp"
 
