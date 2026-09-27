@@ -29,6 +29,16 @@ void ShrubberyCreationForm::executeAction() const {
 	if (!outfile.is_open())
 		throw (ShrubberyCreationForm::FileNotOpenException()); 
 
-	outfile << "Pretend there is a tree here\n";
+outfile << "\n"
+        << "       _-_ \\ \n"
+        << "    /~~   ~~\\ \n"
+        << " /~~         ~~\\ \n"
+        << "{               } \n"
+        << " \\  _-     -_  / \n"
+        << "   ~  \\\\ //  ~ \n"
+        << "_- -   | | _- _ \n"
+        << "  _ -  | |   -_ \n"
+        << "      // \\\\ \n";
+
 	outfile.close();
 }
