@@ -11,6 +11,16 @@ Bureaucrat::Bureaucrat(std::string name) : _name(name) , _grade(150) {
 	std::cout << "Pigeon named " << _name << " created." << std::endl;
 }
 
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
+
+	if (grade < 1)
+		throw (Bureaucrat::GradeTooHighException());
+	if (grade > 150)
+		throw (Bureaucrat::GradeTooLowException());
+	_grade = grade;
+	std::cout << "Pigeon named " << _name << " created. With Grade: " << _grade << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const Bureaucrat& other) 
 	: _name(other._name), _grade(other._grade) {
 	std::cout << "Pigeon cloning device activated... Copying " << other._name << std::endl;
